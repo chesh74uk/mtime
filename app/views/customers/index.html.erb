@@ -10,7 +10,8 @@
         <div class="column">
             <ul>
             <% @customers.each do |c| %>
-                <li><%= c.customer_name %> <%= link_to 'edit', edit_customer_path(c) %></li>
+                <li><%= c.customer_name %> <%= link_to 'edit', edit_customer_path(c) %> | 
+                <%= link_to 'delete', customer_path(c), data: { confirm: 'Are you sure?' }, method: :delete %></li>
             <% end %>
             </ul>
         </div>

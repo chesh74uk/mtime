@@ -35,6 +35,13 @@ class CustomersController < ApplicationController
     end
   end
   
+  def destroy
+    @customer.destroy
+    respond_to do |format|
+      format.html { redirect_to customers_path, notice: 'Customer was successfully deleted.' }
+    end
+  end
+  
     private
     # Use callbacks to share common setup or constraints between actions.
     def set_customer

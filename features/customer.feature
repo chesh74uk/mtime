@@ -21,3 +21,9 @@ Feature: Customer
     When a user selects edit customer
     And completes the edit customer form
     Then the customer should be edited
+  
+  Scenario: Delete Customers
+    Given a customer has been created 
+    And a web browser is at the customer page
+    When a user selects delete customer
+    Then the customer should be deleted

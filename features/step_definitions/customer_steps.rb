@@ -49,3 +49,12 @@ end
 Then("the customer should be edited") do
   expect(page).to have_content("Customer ABC")
 end
+
+When("a user selects delete customer") do
+  @customer = Customer.last
+  find("a[href='#{customer_path(@customer)}']").click
+end
+
+Then("the customer should be deleted") do
+  expect(page).to have_content("Customer was successfully deleted.")
+end
