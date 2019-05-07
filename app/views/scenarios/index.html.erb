@@ -1,0 +1,29 @@
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h3>Manage scenarios</h3>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="column">
+            <ul>
+            <% @scenarios.each do |s| %>
+                <li><%= s.scenario_name %> : <%= link_to 'edit', edit_scenario_path(s) %> | 
+                <%= link_to 'delete', scenario_path(s), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <%= button_to "Add scenario", new_scenario_path, method: :get, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
+
+
+

@@ -1,6 +1,8 @@
 Given("a web browser is at the home page") do
   FactoryBot.create(:customer,
                     :customer_name => "Customer zzz")
+  FactoryBot.create(:scenario,
+                    :scenario_name => "Scenario 1")
   visit root_path
 end
 
@@ -9,7 +11,6 @@ When("a user selects Manage customers link") do
 end
 
 Then("show a list of Customers") do
-  
   expect(page).to have_content("Customer zzz")
 end
 
