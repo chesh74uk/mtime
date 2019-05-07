@@ -1,0 +1,27 @@
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h3>Manage customers</h3>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="column">
+            <ul>
+            <% @customers.each do |c| %>
+                <li><%= c.customer_name %> <%= link_to 'edit', edit_customer_path(c) %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <%= button_to "Add customer", new_customer_path, method: :get, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
+
+

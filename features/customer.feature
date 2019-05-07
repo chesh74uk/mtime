@@ -5,7 +5,13 @@ Feature: Customer
   i should be able to manage my Customers
   
   Scenario: Show Customers
-  Given a web browser is at the home page
-  When a user selects a Customer link
-  Then show a list of Customers
+    Given a web browser is at the home page
+    When a user selects Manage customers link
+    Then show a list of Customers
+  
+  Scenario: Create Customers
+    Given a web browser is at the customer page
+    When a user selects the Add customer button
+    And completes the form
+    Then a new customer should be created
   

@@ -9,6 +9,7 @@ Ubuntu version: lsb_release -a
 
 MONGO
 https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/
+rails g mongoid:config
 sudo service mongod start
 
 RUBY
@@ -34,6 +35,8 @@ https://github.com/DatabaseCleaner/database_cleaner
 
 edit spec/rails_helper.rb with database cleaning strategy (truncate with mongo)
 & env.rb in features
+
+gem "high_voltage"
 
 GIT
 git init
