@@ -33,6 +33,7 @@ https://github.com/BetterErrors/better_errors
 https://github.com/DatabaseCleaner/database_cleaner
 
 edit spec/rails_helper.rb with database cleaning strategy (truncate with mongo)
+& env.rb in features
 
 GIT
 git init
@@ -54,4 +55,4 @@ https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md
 FactoryBot.create(:timeline_with_stages, stages_count: 1).stages.length
 
 TODO
-Tidy up screens to show timelines with stages
+
