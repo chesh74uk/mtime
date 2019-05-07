@@ -1,4 +1,6 @@
 Given("a web browser is at the home page") do
+  FactoryBot.create(:customer,
+                    :customer_name => "Customer zzz")
   visit root_path
 end
 
@@ -7,9 +9,8 @@ When("a user selects Manage customers link") do
 end
 
 Then("show a list of Customers") do
-  FactoryBot.create(:customer,
-                    :customer_name => "Customer 1")
-  expect(page).to have_content("Customer 1")
+  
+  expect(page).to have_content("Customer zzz")
 end
 
 Given("a web browser is at the customer page") do
@@ -30,4 +31,21 @@ Then("a new customer should be created") do
   expect(page).to have_content("Customer 1")
 end
 
+Given("a customer has been created") do
+  FactoryBot.create(:customer,
+                    :customer_name => "Customer xxx")
+end
 
+When("a user selects edit customer") do
+  @customer = Customer.last
+  find("a[href='#{edit_customer_path(@customer)}']").click
+end
+
+When("completes the edit customer form") do
+  fill_in "customer_customer_name", :with => "Customer ABC"
+  click_button "Update Customer"
+end
+
+Then("the customer should be edited") do
+  expect(page).to have_content("Customer ABC")
+end
