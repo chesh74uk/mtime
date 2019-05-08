@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h3>Manage tests</h3>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="column">
+            <ul>
+            <% @tests.each do |t| %>
+                <li><%= t.test_customer %> - <%= t.test_scenario %> : <%= link_to 'edit', edit_test_path(t) %> | 
+                <%= link_to 'delete', test_path(t), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <%= button_to "Add test", new_test_path, method: :get, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>

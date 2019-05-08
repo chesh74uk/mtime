@@ -5,6 +5,9 @@ Given("a web browser is at the home page") do
                     :scenario_name => "Scenario 1")
   FactoryBot.create(:event,
                     :event_name => "Event 1")
+  FactoryBot.create(:test,
+                    :test_customer => "Customer 1",
+                    :test_scenario => "Scenario A")
   visit root_path
 end
 
