@@ -57,5 +57,8 @@ FACTORYBOT
 https://github.com/thoughtbot/factory_bot/blob/master/GETTING_STARTED.md
 FactoryBot.create(:timeline_with_stages, stages_count: 1).stages.length
 
+CUCUMBER
+cucumber -n "Feature name"
+
 TODO
 Menu

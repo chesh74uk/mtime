@@ -15,7 +15,7 @@ class ScenariosController < ApplicationController
   def update
     respond_to do |format|
       if @scenario.update(scenario_params)
-        format.html { redirect_to scenarios_path, notice: 'Dcenario was successfully updated.' }
+        format.html { redirect_to scenarios_path, notice: 'Scenario was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -49,7 +49,7 @@ class ScenariosController < ApplicationController
   
    # Never trust parameters from the scary internet, only allow the white list through.
     def scenario_params
-      params.require(:scenario).permit(:scenario_name, :scenario_description)
+      params.require(:scenario).permit(:scenario_name, :scenario_description, :scenario_date)
     end
   
 end

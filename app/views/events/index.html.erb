@@ -1,0 +1,26 @@
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h3>Manage events</h3>
+        </div>
+    </div>
+    
+
+    <div class="row">
+        <div class="column">
+            <ul>
+            <% @events.each do |e| %>
+                <li><%= e.event_name %> : <%= link_to 'edit', edit_event_path(e) %> | 
+                <%= link_to 'delete', event_path(e), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+            <% end %>
+            </ul>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <%= button_to "Add event", new_event_path, method: :get, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>
