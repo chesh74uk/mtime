@@ -1,5 +1,6 @@
 <%= simple_form_for @test do |t| %>
             <%= t.input :test_customer, collection: @customers %>
             <%= t.input :test_scenario, collection: @scenarios %>
+            <%= t.input :test_start_date, as: :date, html5: true, label: 'Default start date'%>
             <%= t.button :submit, class: "btn btn-primary" %>
 <% end %>

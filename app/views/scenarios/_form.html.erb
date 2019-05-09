@@ -1,6 +1,5 @@
 <%= simple_form_for @scenario do |s| %>
             <%= s.input :scenario_name, label: 'Scenario name' %>
             <%= s.input :scenario_description, as: :text, label: 'Scenario description' %>
-            <%= s.input :scenario_date, as: :date, html5: true, label: 'Default system start date'%>
             <%= s.button :submit, class: "btn btn-primary" %>
 <% end %>
