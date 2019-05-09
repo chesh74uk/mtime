@@ -1,4 +1,4 @@
-<%= simple_form_for @event do |e| %>
+<%= simple_form_for ([@test, @event ]) do |e| %>
     <%= e.input :event_date, as: :date, html5: true, label: 'System start date' %>
     <%= e.input :event_name, label: 'Event' %>
     <%= e.input :event_outcome, label: 'Outcome' %>

@@ -9,6 +9,23 @@
             <h5><%= @test.test_customer + " - " + @test.test_scenario %></h5>
         </div>
     </div>
+    <div class="container">
+        <%= @test.events.each do |te| %>
+        <div class="row">
+            <div class="col-sm">
+                <%= te.event_date.strftime("%a %b %d") %>
+            </div>
+            <div class="col-sm">
+                <%= te.event_name %>
+            </div>
+            <div class="col-sm">
+                <%= link_to 'edit', edit_test_event_path(@test, te), class: "event-edit" %> | 
+                <%= link_to 'delete', test_event_path(@test, te), data: { confirm: 'Are you sure?' }, method: :delete %>
+            </div>
+        </div>
+        <% end %>
+    </div>
+    
 </div>
 <div class="container">
     <div class="row">
