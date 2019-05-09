@@ -17,14 +17,21 @@ Feature: Test
     Then a new test should be created
 
   Scenario: Edit Test
-      Given a test has been created 
-      And a web browser is at the test page
-      When a user selects edit test
-      And completes the edit test form
-      Then the test should be edited
+    Given a test has been created 
+    And a web browser is at the test page
+    When a user selects edit test
+    And completes the edit test form
+    Then the test should be edited
       
   Scenario: Delete Test
-      Given a test has been created 
-      And a web browser is at the test page
-      When a user selects delete test
-      Then the test should be deleted
+    Given a test has been created 
+    And a web browser is at the test page
+    When a user selects delete test
+    Then the test should be deleted
+      
+  Scenario: Show a Test
+    Given a test has been created 
+    And a web browser is at the test page
+    When a user selects a test
+    Then show the details of the test
+    

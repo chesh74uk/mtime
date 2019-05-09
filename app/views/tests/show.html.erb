@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <h3>Test details</h3>
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <h5><%= @test.test_customer + " - " + @test.test_scenario %></h5>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="column">
+            <%= button_to "Add event", new_test_event_path(@test), method: :get, class: "btn btn-primary" %>
+        </div>
+    </div>
+</div>

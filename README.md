@@ -60,5 +60,8 @@ FactoryBot.create(:timeline_with_stages, stages_count: 1).stages.length
 CUCUMBER
 cucumber -n "Feature name"
 
+DATEPICKER
+https://stackoverflow.com/questions/13722301/datepicker-jquery-and-simple-form-for
+
 TODO
-Menu
+Add events to tests

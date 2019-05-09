@@ -42,9 +42,9 @@ Given("a test has been created") do
 end
 
 When("a user selects edit test") do
-  @test = Test.last
-  find("a[href='#{edit_test_path(@test)}']").click
+  click_on(class: 'test-edit')
 end
+
 
 When("completes the edit test form") do
   fill_in "test_test_customer", :with => "Customer zzz"
@@ -57,10 +57,19 @@ Then("the test should be edited") do
 end
 
 When("a user selects delete test") do
-  @test = Test.last
-  find("a[href='#{test_path(@test)}']").click
+  click_on(class: 'test-delete')
 end
 
 Then("the test should be deleted") do
   expect(page).to have_content("Test was successfully deleted.")
+end
+
+When("a user selects a test") do
+  click_on(class: 'test-link')
+end
+
+Then("show the details of the test") do
+  expect(page).to have_content("Test details")
+  expect(page).to have_content("Customer 123 - Scenario ABC")
+  expect(page).to have_button("Add event")
 end

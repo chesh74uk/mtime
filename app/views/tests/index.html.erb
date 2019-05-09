@@ -10,8 +10,9 @@
         <div class="column">
             <ul>
             <% @tests.each do |t| %>
-                <li><%= t.test_customer %> - <%= t.test_scenario %> : <%= link_to 'edit', edit_test_path(t) %> | 
-                <%= link_to 'delete', test_path(t), data: { confirm: 'Are you sure?' }, method: :delete %></li>
+                <li><%= link_to (t.test_customer + " - " + t.test_scenario), t, class: "test-link" %> : 
+                <%= link_to 'edit', edit_test_path(t), class: "test-edit" %> | 
+                <%= link_to 'delete', test_path(t), data: { confirm: 'Are you sure?' }, method: :delete, class: "test-delete" %></li>
             <% end %>
             </ul>
         </div>
